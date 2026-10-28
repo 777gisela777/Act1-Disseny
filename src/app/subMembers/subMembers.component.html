@@ -1,0 +1,66 @@
+<section class="rounded-2xl bg-white/50 p-6 shadow-lg backdrop-blur-sm mx-40">
+    <h2 id="subMembers-heading" class="text-center">
+    @if (logo()) {
+      <img class="mx-auto block max-w-100 max-h-[150px]" [src]="logo()" [alt]="name() + ' logo'">
+    } @else {
+      {{ name() }}
+    }
+  </h2>
+  <h3 [style.color]="color()" class="text-4xl justify-center items-center flex rounded-md py-2 px-3 font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black]">Members</h3>
+  <button (click)="toggleView()"
+  class="rounded-md py-2 px-3 font-bodoni italic text-l bg-pink-600 text-white block mx-auto my-1"
+  >
+    @if (view === 'idols') {
+      View seiyuus
+    } @else {
+      View idols
+    }
+  </button>
+  @if (view === 'idols') {
+    <ul class="flex flex-wrap justify-center gap-4 mx-auto max-w-5xl p-0">
+    @for (idol of idols; track idol.id) {
+        <li class="flex-[0_1_12rem]">
+          <h4 [style.color]="idol.color" class="h-[3.6rem] flex items-end leading-[1.2] text-center text-2xl justify-center rounded-md font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black] my-1">{{ idol.name }}</h4>
+          <div [style.border-color]="idol.color" class="bg-white border-2 border-solid rounded-[50%] box-border flex items-center justify-center overflow-hidden w-[200px] h-[200px] mx-auto">
+            <img [src]="idol.img" [alt]="idol.name + ' picture'" class="w-full h-full object-cover object-center">
+          </div>
+        </li>
+      } @empty {
+        <li class="font-bodoni italic text-xl">No idols found</li>
+      }
+    </ul>
+  } @else {
+    <ul class="flex flex-wrap justify-center gap-4 mx-auto max-w-5xl p-0">
+      @for (seiyuu of seiyuus; track seiyuu.id) {
+        <li>
+          <h4 [style.color]="seiyuu.color" class="h-[3.6rem] flex items-end leading-[1.2] text-center text-2xl justify-center rounded-md font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black] my-1">{{ seiyuu.name }}</h4>
+          <div [style.border-color]="seiyuu.color" class="bg-white border-2 border-solid rounded-[50%] box-border flex items-center justify-center overflow-hidden w-[200px] max-h-[500px] mx-auto">
+            <img [src]="seiyuu.img" [alt]="seiyuu.name + ' picture'" class="w-full h-full object-cover object-center">
+          </div>
+        </li>
+      } @empty {
+        <li class="font-bodoni italic text-xl">No seiyuus found</li>
+      }
+    </ul>
+  }
+  <div class="m-10 ">
+    <hr class="my-8 border-t-2 border-pink-500/50">
+    <h3 [style.color]="color()" class="text-4xl justify-center items-center flex rounded-md py-2 px-3 font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black] my-2">Featured video</h3>
+    @if (videoId) {
+      <div class="justify-center flex">
+        <iframe
+          width="560"
+          height="315"
+          [src]="videoUrl"
+          referrerpolicy="strict-origin-when-cross-origin"
+          [title]="view === 'idols' ? 'Idol group song' : 'Seiyuu group video'"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    } @else {
+      <p class="font-bodoni italic text-xl">No video available</p>
+    }
+  </div>
+</section>

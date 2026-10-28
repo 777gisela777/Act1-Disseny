@@ -1,8 +1,10 @@
-      <div>
-        <h2>Groups</h2>
-        <ul>
-          <li><a href="#">μ's</a></li>
-          <li><a href="#">Aqours</a></li>
-          <li><a href="#">Nijigasaki High School Idol Club</a></li>
-        </ul>
-      </div>
+<button
+  type="button"
+  [class.selected]="selected()"
+  (click)="select.emit(group().id)"
+  class="rounded-md py-2 px-3 font-bodoni italic text-l"
+  [class.bg-pink-600]="selected()"
+  [class.text-white]="selected()"
+>
+  {{ group().name }}
+</button>

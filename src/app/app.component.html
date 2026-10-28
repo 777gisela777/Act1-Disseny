@@ -1,8 +1,64 @@
-<app-header></app-header>
-<main class="bg-pink-100">
-    <h1>Welcome to Love Live's website!</h1>
-    <img src="" alt="Love Live logo" />
-    <button href="#">About the series</button>
-    <app-groups></app-groups>
+<app-header />
+<main class="bg-[url('https://i.idol.st/u/background/e81sAEBackground-c3AqSS.jpg')] bg-cover bg-center bg-no-repeat justify-center flex-col items-center flex-wrap">
+  <section id="home" class="flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center gap-4 px-4 text-center">
+    <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Love_Live%21_English_logo.svg/3840px-Love_Live%21_English_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Love Live logo" class="w-96 mx-auto block" />
+    <p class="my-1 mx-0 justify-center items-center flex font-medium text-2xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600">Gisela's Angular project!</p>
+  </section>
+  <section id="video" class="pt-20 pb-50">
+    <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Random video</h2>
+    <app-video [video]="video" />
+  </section>
+  <section id="groups" class="flex-row flex-wrap pt-20 pb-50">
+    <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Groups</h2>
+    <ul id="groups" class="flex flex-row flex-wrap items-center gap-4 justify-center mx-40 pb-10">
+      @for (group of groups; track group.id) {
+        <li>
+          <app-groups
+            [group]="group"
+            [selected]="group.id === selectedGroup?.id"
+            (select)="onSelectGroup($event)"
+          />
+        </li>
+      }
+    </ul>
+
+    @if (selectedGroup) {
+      <app-idols
+        [name]="selectedGroup.name"
+        [logo]="selectedGroup.logo"
+        [song]="selectedGroup.song"
+        [video]="selectedGroup.video"
+        [color]="selectedGroup.color"
+      />
+    } @else {
+      <div class="mx-40 rounded-2xl bg-white/50 p-6 text-center shadow-lg backdrop-blur-sm">
+        <p class="font-bodoni italic text-xl">Select a group too see its members.</p>
+      </div>
+    }
+  </section>
+
+  <section id="subunits" class="flex-row flex-wrap pt-20 pb-50">
+    <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Subunits</h2>
+    <ul id="subunits" class="flex flex-row flex-wrap items-center gap-4 justify-center mx-40 pb-10">
+      @for (subunit of subunits; track subunit.id) {
+        <li>
+          <app-subunits
+          [subunit]="subunit"
+          [selected]="subunit.id === selectedSubunit?.id"
+          (select)="onSelectSubunit($event)"
+          />
+        </li>
+      }
+    </ul>
+
+    @if (selectedSubunit) {
+      <app-subMembers [name]="selectedSubunit.name" [logo]="selectedSubunit.logo" [song]="selectedSubunit.song" [video]="selectedSubunit.video" [color]="selectedSubunit.color"/>
+    } @else {
+      <div class="mx-40 rounded-2xl bg-white/50 p-6 text-center shadow-lg backdrop-blur-sm">
+        <p class="font-bodoni italic text-xl">Select a subunit too see its members.</p>
+      </div>
+    }
+  </section>
+
 </main>
-<app-footer></app-footer>
+<app-footer />

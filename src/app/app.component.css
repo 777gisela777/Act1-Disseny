@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+  --font-bodoni: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text",
+    Baskerville, "Baskerville Old Face", Georgia, serif;
+}
