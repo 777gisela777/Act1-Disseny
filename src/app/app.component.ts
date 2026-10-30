@@ -17,7 +17,6 @@ import { SUBUNITS } from './subunits';
   templateUrl: './app.component.html',
 })
 export class App {
-  protected readonly title = 'love-live-web';
   groups = GROUPS;
   video = VIDEOS[Math.floor(Math.random() * VIDEOS.length)];
   subunits = SUBUNITS;
