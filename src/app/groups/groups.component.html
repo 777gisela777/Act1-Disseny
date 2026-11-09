@@ -1,10 +1,33 @@
-<button
-  type="button"
-  [class.selected]="selected()"
-  (click)="select.emit(group().id)"
-  class="rounded-md py-2 px-3 font-bodoni italic text-l"
-  [class.bg-pink-600]="selected()"
-  [class.text-white]="selected()"
->
-  {{ group().name }}
-</button>
+<section id="groups" class="flex-row flex-wrap pt-20 pb-50">
+  <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Groups</h2>
+
+  <ul id="groups" class="flex flex-row flex-wrap items-center gap-4 justify-center mx-40 pb-10">
+    @for (group of groups; track group.id) {
+      <li>
+        <button
+          type="button"
+          (click)="onSelectGroup(group.id)"
+          class="rounded-md py-2 px-3 font-bodoni italic text-l"
+          [class.bg-pink-600]="selectedGroupId === group.id"
+          [class.text-white]="selectedGroupId === group.id"
+        >
+          {{ group.name }}
+        </button>
+      </li>
+    }
+  </ul>
+
+  @if (selectedGroup) {
+    <app-idols
+      [name]="selectedGroup.name"
+      [logo]="selectedGroup.logo"
+      [song]="selectedGroup.song"
+      [video]="selectedGroup.video"
+      [color]="selectedGroup.color"
+    />
+  } @else {
+    <div class="mx-40 rounded-2xl bg-white/50 p-6 text-center shadow-lg backdrop-blur-sm">
+      <p class="font-bodoni italic text-xl">Select a group too see its members.</p>
+    </div>
+  }
+</section>

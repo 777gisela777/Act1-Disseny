@@ -1,15 +1,23 @@
-import { Component, input, output } from '@angular/core';
+import { Component } from '@angular/core';
+import { IdolsComponent } from '../idols/idols.component';
 import { GROUPS } from '../groups';
 
-type Group = (typeof GROUPS)[number];
-
 @Component({
+  imports: [IdolsComponent],
   selector: 'app-groups',
+  standalone: true,
   styleUrl: './groups.component.css',
   templateUrl: './groups.component.html',
 })
 export class GroupsComponent {
-  group = input.required<Group>();
-  selected = input(false);
-  select = output<number>();
+  groups = GROUPS;
+  selectedGroupId?: number;
+
+  get selectedGroup() {
+    return this.groups.find((group) => group.id === this.selectedGroupId);
+  }
+
+  onSelectGroup(id: number) {
+    this.selectedGroupId = id;
+  }
 }

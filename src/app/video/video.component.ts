@@ -10,13 +10,12 @@ type Video = (typeof VIDEOS)[number];
   templateUrl: './video.component.html',
 })
 export class VideoComponent {
-  video = input.required<Video>();
+  video = VIDEOS[Math.floor(Math.random() * VIDEOS.length)];
   private sanitizer = inject(DomSanitizer);
 
   get videoUrl(): SafeResourceUrl {
-    const video = this.video();
     return this.sanitizer.bypassSecurityTrustResourceUrl(
-      `https://www.youtube.com/embed/${video.link}?enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`,
+      `https://www.youtube.com/embed/${this.video.link}?enablejsapi=1&origin=${encodeURIComponent(window.location.origin)}`,
     );
   }
 }
