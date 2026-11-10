@@ -1,10 +1,33 @@
-<button
-  type="button"
-  [class.selected]="selected()"
-  (click)="select.emit(subunit().id)"
-  class="rounded-md py-2 px-3 font-bodoni italic text-l"
-  [class.bg-pink-600]="selected()"
-  [class.text-white]="selected()"
->
-  {{ subunit().name }}
-</button>
+<section id="subunits" class="flex-row flex-wrap pt-20 pb-50">
+  <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Subunits</h2>
+
+  <ul id="subunits" class="flex flex-row flex-wrap items-center gap-4 justify-center mx-40 pb-10">
+    @for (subunit of subunits; track subunit.id) {
+      <li>
+        <button
+          type="button"
+          (click)="onSelectSubunit(subunit.id)"
+          class="rounded-md py-2 px-3 font-bodoni italic text-l"
+          [class.bg-pink-600]="selectedSubunitId === subunit.id"
+          [class.text-white]="selectedSubunitId === subunit.id"
+        >
+          {{ subunit.name }}
+        </button>
+      </li>
+    }
+  </ul>
+
+  @if (selectedSubunit) {
+    <app-subMembers
+      [name]="selectedSubunit.name"
+      [logo]="selectedSubunit.logo"
+      [song]="selectedSubunit.song"
+      [video]="selectedSubunit.video"
+      [color]="selectedSubunit.color"
+    />
+  } @else {
+    <div class="mx-40 rounded-2xl bg-white/50 p-6 text-center shadow-lg backdrop-blur-sm">
+      <p class="font-bodoni italic text-xl">Select a subunit too see its members.</p>
+    </div>
+  }
+</section>
