@@ -138,7 +138,7 @@ export const SUBUNITS = [
     {
         id: 18,
         name: "AiScReam",
-        logo: "https://www.lovelive-anime.jp/special/AiScReam/asset/img/logo.png",
+        logo: "https://static.wikia.nocookie.net/love-live/images/a/aa/AiScReam_Logo.png/revision/latest/scale-to-width/360?cb=20250930181406&path-prefix=es",
         song: "NDuV7F5Ms5Y",
         video: "nb6_sKQXQ04",
         color: "#FF77D3"
@@ -148,7 +148,7 @@ export const SUBUNITS = [
         name: "GKSS",
         logo: "assets/img/gkss_logo.png",
         song: "HGN3ZPE7B34",
-        video: "poXDXk-b0CA",
+        video: "AH5vlpCSCtE",
         color: "#1D1D1D"
     },
     {
