@@ -1,0 +1,37 @@
+<div class="media">
+  <video
+    #idolVideo
+    controls
+    preload="none"
+    poster="/imatges/NAME.webp"
+  >
+    <source data-format="webm" type="video/webm" />
+    <source data-format="mp4" type="video/mp4" />
+
+    <track
+      kind="captions"
+      src="/video/Mari_Ohara_English_Class.vtt"
+      srclang="ca"
+      label="Català"
+      default
+    />
+
+    El teu navegador no admet vídeos HTML5.
+  </video>
+
+  <p>
+    <strong>Video</strong> · vídeo original de demostració
+  </p>
+
+  <p class="note">
+    Font de vídeo assignada:
+    <strong>
+      {{
+        videoVisible
+          ? "sí, element visible"
+          : "no, pendent de visibilitat"
+      }}
+    </strong>.
+    L'atribut preload="none" és una indicació, no una garantia de zero descàrregues.
+  </p>
+</div>

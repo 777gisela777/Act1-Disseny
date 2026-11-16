@@ -45,7 +45,11 @@
   }
   <div class="m-10 ">
     <hr class="my-8 border-t-2 border-pink-500/50">
-    <h3 [style.color]="color()" class="text-4xl justify-center items-center flex rounded-md py-2 px-3 font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black] my-2">Featured video</h3>
+    @if (view === 'idols') {
+      <h3 [style.color]="color()" class="text-4xl justify-center items-center flex rounded-md py-2 px-3 font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black] my-2">Featured song</h3>
+    } @else {
+      <h3 [style.color]="color()" class="text-4xl justify-center items-center flex rounded-md py-2 px-3 font-bodoni italic font-medium [-webkit-text-stroke:0.2px_black] my-2">Featured video</h3>
+    }
     @if (videoId) {
       <div class="justify-center flex">
         <iframe
