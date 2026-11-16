@@ -248,5 +248,20 @@ export const VIDEOS = [
         id: 50,
         link: "vJ3jNTH2QL0",
         title: " 【MV Full】µ's 2ndシングル「Snow halation」【スクスタリリース記念！】 "
+    },
+    {
+        id: 51,
+        link: "VZRgPz3Hd-Y",
+        title: "【限定公開】SUNNY DAY SONG / ラブライブ！シリーズ 【LoveLive! Series 15th Anniversary ラブライブ！フェス】"
+    },
+    {
+        id: 52,
+        link: "Q2ZK0d0j2tY",
+        title: "🌈あなたへ🌈【映画『ラブライブ！虹ヶ咲学園スクールアイドル同好会 完結編 最終章』 スペシャルムービー】"
+    },
+    {
+        id: 53,
+        link: "2ejTFl65cwc",
+        title: "【限定公開】Just Believe!!! / 虹ヶ咲学園スクールアイドル同好会【LoveLive! Series 15th Anniversary ラブライブ！フェス】"
     }
 ]
