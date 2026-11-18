@@ -1,0 +1,53 @@
+<div class="gallery">
+  <figure>
+    <picture>
+      <source
+        type="image/avif"
+        srcset="
+          /imatges/konoha-400.avif 400w,
+          /imatges/konoha-800.avif 800w,
+          /imatges/konoha-1200.avif 1200w
+        "
+        sizes="(max-width: 700px) 100vw, 50vw"
+      />
+
+      <img
+        src="/imatges/konoha-800.webp"
+        srcset="
+          /imatges/konoha-400.webp 400w,
+          /imatges/konoha-800.webp 800w,
+          /imatges/konoha-1200.webp 1200w
+        "
+        sizes="(max-width: 700px) 100vw, 50vw"
+        width="1200"
+        height="670"
+        alt="Vista panoràmica de Konoha amb les cares dels Hokage"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
+    <figcaption>Aldea de Konoha · AVIF/WebP</figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="/imatges/dojo-800.webp"
+      width="800"
+      height="446"
+      alt="Interior d'un dojo ninja amb armes d'entrenament"
+      loading="lazy"
+    />
+    <figcaption>Dojo ninja · loading lazy</figcaption>
+  </figure>
+
+  <figure>
+    <img
+      src="/imatges/pergami-800.webp"
+      width="800"
+      height="446"
+      alt="Pergamí ninja amb un kunai"
+      loading="lazy"
+    />
+    <figcaption>Pergamí ninja · loading lazy</figcaption>
+  </figure>
+</div>
