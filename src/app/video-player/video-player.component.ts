@@ -8,14 +8,13 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@ang
 })
 
 export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
-  // Només assignem les fonts quan el vídeo entra a la zona visible.
   @ViewChild('idolVideo') videoRef!: ElementRef<HTMLVideoElement>;
   videoVisible = false;
   private observer?: IntersectionObserver;
 
   ngAfterViewInit(): void {
     if (!('IntersectionObserver' in window)) {
-      this.activateVideo(); // Alternativa per a navegadors antics
+      this.activateVideo();
       return;
     }
     this.observer = new IntersectionObserver(([entry]) => {
@@ -30,11 +29,10 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   private activateVideo(): void {
     this.videoVisible = true;
     const video = this.videoRef.nativeElement;
-    // Assignació imperativa de fonts perquè el navegador les detecti immediatament.
     const mp4 = video.querySelector<HTMLSourceElement>('[data-format="mp4"]');
     const webm = video.querySelector<HTMLSourceElement>('[data-format="webm"]');
-    if (mp4) mp4.src = '/video/Mari_Ohara_English_Class.mp4';
-    if (webm) webm.src = '/video/Mari_Ohara_English_Class.webm';
+    if (mp4) mp4.src = '/assets/video/Mari_Ohara_English_Class.mp4';
+    if (webm) webm.src = '/assets/video/Mari_Ohara_English_Class.webm';
     video.load();
   }
 

@@ -1,37 +1,25 @@
-<div class="media">
+<div class="pt-20 pb-50">
+  <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Video player</h2>
+  <section class="justify-center items-center flex flex-col">
+    <h3 class="my-1 mx-0 justify-center items-center flex font-medium text-4xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3 mt-10">Mari's English Class</h3>
   <video
     #idolVideo
     controls
     preload="none"
-    poster="/imatges/NAME.webp"
+    poster="/assets/img/LLSS_S2Ep2_090.webp"
   >
     <source data-format="webm" type="video/webm" />
     <source data-format="mp4" type="video/mp4" />
 
     <track
       kind="captions"
-      src="/video/Mari_Ohara_English_Class.vtt"
-      srclang="ca"
-      label="Català"
+      src="/assets/video/Mari_Ohara_English_Class.vtt"
+      srclang="jp"
+      label="Japanese"
       default
     />
 
-    El teu navegador no admet vídeos HTML5.
+    This browser does not support HTML5 video.
   </video>
-
-  <p>
-    <strong>Video</strong> · vídeo original de demostració
-  </p>
-
-  <p class="note">
-    Font de vídeo assignada:
-    <strong>
-      {{
-        videoVisible
-          ? "sí, element visible"
-          : "no, pendent de visibilitat"
-      }}
-    </strong>.
-    L'atribut preload="none" és una indicació, no una garantia de zero descàrregues.
-  </p>
+  </section>
 </div>

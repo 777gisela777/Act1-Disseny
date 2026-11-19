@@ -1,53 +1,98 @@
-<div class="gallery">
-  <figure>
+<div class="pt-20 pb-50">
+  <h2 class="my-1 mx-0 justify-center items-center flex font-medium text-5xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 pb-3">Gallery</h2>
+  <figure class="justify-center items-center flex flex-col">
+    <h3 class="my-1 mx-0 justify-center items-center flex flex-col font-medium text-4xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 mt-15">Hanamaru</h3>
+    <figcaption class="rounded-md py-2 px-3 font-bodoni italic text-l">AVIF/WebP</figcaption>
     <picture>
       <source
         type="image/avif"
         srcset="
-          /imatges/konoha-400.avif 400w,
-          /imatges/konoha-800.avif 800w,
-          /imatges/konoha-1200.avif 1200w
+          /assets/img/hanamaru-400.avif 400w,
+          /assets/img/hanamaru-800.avif 800w,
+          /assets/img/hanamaru-1200.avif 1200w
         "
         sizes="(max-width: 700px) 100vw, 50vw"
       />
 
       <img
-        src="/imatges/konoha-800.webp"
         srcset="
-          /imatges/konoha-400.webp 400w,
-          /imatges/konoha-800.webp 800w,
-          /imatges/konoha-1200.webp 1200w
+          /assets/img/hanamaru-400.webp 400w,
+          /assets/img/hanamaru-800.webp 800w,
+          /assets/img/hanamaru-1200.webp 1200w
         "
-        sizes="(max-width: 700px) 100vw, 50vw"
+        sizes="(max-width: 1200px) 100vw, 50vw"
         width="1200"
         height="670"
-        alt="Vista panoràmica de Konoha amb les cares dels Hokage"
+        alt="Hanamaru Kunikida"
         loading="eager"
         fetchpriority="high"
+        class="rounded-2xl"
       />
     </picture>
-    <figcaption>Aldea de Konoha · AVIF/WebP</figcaption>
   </figure>
 
-  <figure>
+  <figure class="justify-center items-center flex flex-col">
+    <h3 class="my-1 mx-0 justify-center items-center flex flex-col font-medium text-4xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 mt-15">Mari</h3>
+    <figcaption class="rounded-md py-2 px-3 font-bodoni italic text-l">Loading lazy</figcaption>
     <img
-      src="/imatges/dojo-800.webp"
-      width="800"
-      height="446"
-      alt="Interior d'un dojo ninja amb armes d'entrenament"
+      srcset="
+        /assets/img/mari-400.webp 400w,
+        /assets/img/mari-800.webp 800w,
+        /assets/img/mari-1200.webp 1200w
+      "
+      width="1200"
+      height="670"
+      alt="Mari Ohara"
       loading="lazy"
+      class="rounded-2xl"
     />
-    <figcaption>Dojo ninja · loading lazy</figcaption>
   </figure>
 
-  <figure>
+  <figure class="justify-center items-center flex flex-col">
+    <h3 class="my-1 mx-0 justify-center items-center flex flex-col font-medium text-4xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 mt-15">Umi</h3>
+    <figcaption class="rounded-md py-2 px-3 font-bodoni italic text-l">Loading lazy</figcaption>
     <img
-      src="/imatges/pergami-800.webp"
-      width="800"
-      height="446"
-      alt="Pergamí ninja amb un kunai"
+      srcset="
+        /assets/img/umi-400.webp 400w,
+        /assets/img/umi-800.webp 800w,
+        /assets/img/umi-1200.webp 1200w
+      "
+      width="1200"
+      height="670"
+      alt="Umi Sonoda"
       loading="lazy"
+      class="rounded-2xl"
     />
-    <figcaption>Pergamí ninja · loading lazy</figcaption>
+  </figure>
+
+  <figure class="justify-center items-center flex flex-col">
+    <h3 class="my-1 mx-0 justify-center items-center flex flex-col font-medium text-4xl [-webkit-text-stroke:0.2px_black] font-bodoni italic text-pink-600 mt-15">Nico</h3>
+    <figcaption class="rounded-md py-2 px-3 font-bodoni italic text-l">AVIF/WebP & Loading lazy</figcaption>
+    <picture>
+      <source
+        type="image/avif"
+        srcset="
+          /assets/img/nico-400.avif 400w,
+          /assets/img/nico-800.avif 800w,
+          /assets/img/nico-1200.avif 1200w
+        "
+        sizes="(max-width: 700px) 100vw, 50vw"
+      />
+
+      <img
+        srcset="
+          /assets/img/nico-400.webp 400w,
+          /assets/img/nico-800.webp 800w,
+          /assets/img/nico-1200.webp 1200w
+        "
+        sizes="(max-width: 1200px) 100vw, 50vw"
+        width="1200"
+        height="670"
+        alt="Nico Yazawa"
+        loading="lazy"
+        fetchpriority="high"
+        class="rounded-2xl"
+      />
+    </picture>
   </figure>
 </div>
